@@ -1,0 +1,269 @@
+:root {
+    --primary: linear-gradient(90deg, rgb(36, 34, 34) 0%, rgb(8, 1, 2) 100%);
+    --secondary: linear-gradient(90deg, rgba(212,145,145,1) 0%, rgb(212, 78, 78) 100%);
+    --text: white;
+}
+
+body {
+    background: rgb(68,48,48);
+    background: var(--primary);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 20px;
+    font-family: 'PT Serif', serif;
+}
+
+.main-section {
+    background: rgb(212,145,145);
+    background: var(--secondary);
+    margin: 50px auto;
+    position: relative;
+    width: 75%;
+}
+
+.main-section:hover::before, .main-section:hover::after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.card {
+    background: rgb(68,48,48);
+    background: var(--primary);
+    margin: 20px;
+}
+
+.main-section:after {
+	filter: blur(50px);
+}
+
+/** HEADER **/
+
+/* NAVBAR MENU */
+
+/** MAIN **/
+
+/* ABOUT ME */
+
+.about-me {
+    width: 75%;
+    margin-top: 125px;
+}
+
+.about-me-cards {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* SKILLS */
+
+.skill {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+
+.skill-title {
+    flex: 1;
+}
+
+.progress {
+    flex: 2;
+}
+
+.progress-bar {
+    background: rgb(139,55,55);
+    background: linear-gradient(90deg, rgba(139,55,55,1) 0%, rgba(60,4,4,1) 100%);
+}
+
+.fa-html5 {
+    color: #E44C24;
+}
+
+.fa-css3-alt {
+    color: #254BDC;
+}
+
+.fa-js {
+    color: #F1DA1D;
+}
+
+.fa-php {
+    color: #868FB8;
+}
+
+.fa-bootstrap {
+    color: #5F408A;
+}
+
+.fa-react {
+    color: #15E3F8;
+}
+
+.fa-node {
+    color: #84B758;
+}
+
+.fa-symfony {
+    color: #000000;
+}
+
+.fa-wordpress {
+    color: #3475B0;
+}
+
+.fa-git {
+    color: #F04C28;
+}
+
+.fa-github {
+    color: #0D0C0C;
+}
+
+/* PROJECTS */
+
+.project .card {
+    margin: 20px auto;
+}
+
+.project .card ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+}
+
+.project .card li {
+    list-style: none;
+    padding: 10px;
+}
+
+#carousel-project {
+    padding: 20px;
+}
+
+.carousel-caption h5, .carousel-caption p{
+    font-weight: 700;
+}
+
+.carousel-item-light h5, .carousel-item-light p{
+    color: black;
+}
+
+.carousel-caption ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+}
+
+.carousel-caption li {
+    list-style: none;
+    padding: 10px;
+}
+
+/* EXPERIENCE */
+
+.experience-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.experience .card img {
+    background: white;
+    height: 200px;
+}
+
+/** FOOTER **/
+
+footer {
+    display: flex; 
+    margin-bottom: 50px;
+}
+
+footer section {
+    flex: 1;
+}
+
+/* CONTACT */
+
+.contact-form {
+    padding: 20px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.contact-links i {
+    color: var(--text);
+    padding: 20px;
+}
+
+.contact-links ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+}
+
+.contact-links li {
+    list-style: none;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 800px) {
+    .about-me-cards {
+        flex-direction: column;
+    }
+    .skill {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .skill .progress {
+        width: 80%;
+    }
+    .experience-cards {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer {
+        flex-direction: column;
+    }
+}
